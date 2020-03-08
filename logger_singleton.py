@@ -15,9 +15,9 @@ class SingletonType(type):
             cls._instances[cls] = super(SingletonType, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
 
+
 # python 3 style
 class MyLogger(object, metaclass=SingletonType):
-    # __metaclass__ = SingletonType   # python 2 Style
     _logger = None
 
     # def __call__():
@@ -34,7 +34,7 @@ class MyLogger(object, metaclass=SingletonType):
 
         if not os.path.isdir(dirname):
             os.mkdir(dirname)
-        fileHandler = logging.FileHandler(dirname + "/log_" + now.strftime("%Y-%m-%d")+".log")
+        fileHandler = logging.FileHandler(dirname + "/log_" + now.strftime("%Y-%m-%d") + ".log")
 
         streamHandler = logging.StreamHandler()
 
@@ -50,21 +50,26 @@ class MyLogger(object, metaclass=SingletonType):
         return self._logger
 
 
-class A():
+class A:
     pass
+
 
 # a simple usecase
 if __name__ == "__main__":
-    MyLogger()
-    logger = MyLogger.__call__().get_logger()
-    print(type(logger))
-    print(type(MyLogger))
+    # MyLogger()
+    # logger = MyLogger.__call__().get_logger()
+    logger = MyLogger().get_logger()
+    # logger = MyLogger()
+    # print(type(logger))
+    # print(type(type(logger)))
+    # print(type(type(type(logger))))
+    # print(type(MyLogger))
     # print(type(type(MyLogger)))
     # print(type(A))
     # a = A()
     # print(type(a))
     logger.info("Hello, Logger")
-    logger.debug("bug occured")
+    logger.debug("bug occurred")
     logger2 = MyLogger.__call__().get_logger()
     print(logger is logger2)
-    logger()
+    # logger()
