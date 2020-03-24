@@ -1,6 +1,6 @@
 import threading
 import time
-from threaded_serializable_singleton import Singleton
+from singleton.threaded_serializable_singleton import Singleton
 
 instances = {}
 threads = []

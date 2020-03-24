@@ -14,10 +14,10 @@ class SingletonMeta(type):
 
     def __call__(cls, *args, **kwargs):
         # DCL
-        if not cls._instance:
-            with cls._lock:
-                if not cls._instance:
-                    cls._instance = super().__call__(*args, **kwargs)
+        # if not cls._instance:
+        with cls._lock:
+            if not cls._instance:
+                cls._instance = super().__call__(*args, **kwargs)
         return cls._instance
 
 
@@ -51,7 +51,7 @@ def get_singleton(value: str) -> None:
 
 
 def test_singleton():
-    for _ in range(1000):
+    for _ in range(10000):
         process1 = Thread(target=get_singleton, args=("FOO",))
         process2 = Thread(target=get_singleton, args=("BAR",))
         process1.start()
@@ -74,3 +74,6 @@ if __name__ == "__main__":
     print(id(instance3))
     print(id(instance4))
     print(instance.value, instance2.value, instance3.value, instance4.value)
+    print(instance._instance)
+    print(instance2._instance)
+    print(instance3._instance)
