@@ -21,6 +21,10 @@ class SingletonMeta(type):
         return cls._instance
 
 
+class A(metaclass=SingletonMeta):
+    pass
+
+
 class Singleton(metaclass=SingletonMeta):
     ident_cache = weakref.WeakValueDictionary()
     value: str = None
@@ -68,12 +72,17 @@ if __name__ == "__main__":
     instance2 = get_singleton(2)
     print(id(instance))
     print(id(instance2))
+    #
+    # instance3 = pickle.loads(pickle.dumps(instance, pickle.HIGHEST_PROTOCOL))
+    # instance4 = pickle.loads(pickle.dumps(instance))
+    # print(id(instance3))
+    # print(id(instance4))
+    # print(instance.value, instance2.value, instance3.value, instance4.value)
+    # print(instance._instance)
+    # print(instance2._instance)
+    # print(instance3._instance)
 
-    instance3 = pickle.loads(pickle.dumps(instance, pickle.HIGHEST_PROTOCOL))
-    instance4 = pickle.loads(pickle.dumps(instance))
-    print(id(instance3))
-    print(id(instance4))
-    print(instance.value, instance2.value, instance3.value, instance4.value)
-    print(instance._instance)
-    print(instance2._instance)
-    print(instance3._instance)
+    a = A()
+    print(id(a))
+    a2 = A()
+    print(id(a2))
