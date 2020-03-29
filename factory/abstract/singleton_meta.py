@@ -1,8 +1,10 @@
 from __future__ import annotations
+
+from abc import ABC, ABCMeta
 from threading import Lock
 
 
-class SingletonMeta(type):
+class SingletonMeta(ABCMeta):
     """
     This is a thread-safe implementation of Singleton.
     """
