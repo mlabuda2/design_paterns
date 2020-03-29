@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 
 
 class Seafood(ABC):
-    def __init__(self, quantity, sauce):
+    def __init__(self, quantity: int, sauce: str):
         self.quantity = quantity
         self.sauce = sauce
 
     @abstractmethod
-    def cook(self):
+    def eat(self):
         pass

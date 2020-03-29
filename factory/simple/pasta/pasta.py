@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 
 
 class Pasta(ABC):
-    def __init__(self, weight, parmesan=False):
+    def __init__(self, weight: int, parmesan: bool = False):
         self.weight = weight
         self.parmesan = parmesan
 
     @abstractmethod
-    def cook(self):
+    def eat(self):
         pass

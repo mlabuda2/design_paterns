@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 
 
 class Pizza(ABC):
-    def __init__(self, weight, sauce):
-        self.weight = weight
+    def __init__(self, diameter: int, sauce: str):
+        self.diameter = diameter
         self.sauce = sauce
 
     @abstractmethod
-    def cook(self):
+    def eat(self):
         pass
