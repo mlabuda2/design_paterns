@@ -3,9 +3,10 @@ from factory.method.pasta.pl_bolognese import PlBolognese
 from factory.method.pasta.pl_carbonara import PlCarbonara
 from factory.method.pasta.pl_napoli import PlNapoli
 from factory.method.pasta.restaurant import Restaurant
+from factory.method.singleton_meta import SingletonMeta
 
 
-class PlRestaurant(Restaurant):
+class PlRestaurant(Restaurant, metaclass=SingletonMeta):
 
     def _prepare_pasta(self, name: str, weight: int, parmesan: bool, al_dente=False) -> Pasta:
         if name == 'bolognese':
