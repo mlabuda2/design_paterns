@@ -1,6 +1,3 @@
-from threading import Lock
-
-from factory.abstract.pasta.bolognese import Bolognese
 from factory.abstract.pizza.pepperoni import Pepperoni
 from factory.abstract.pizza.pizza import Pizza
 from factory.abstract.pizza.pizza_abstract_factory import PizzaFactory

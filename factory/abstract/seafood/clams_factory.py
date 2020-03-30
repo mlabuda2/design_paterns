@@ -1,5 +1,3 @@
-from threading import Lock
-
 from factory.abstract.seafood.clams import Clams
 from factory.abstract.seafood.seafood_abstract_factory import SeafoodFactory
 from factory.abstract.singleton_meta import SingletonMeta

@@ -1,5 +1,3 @@
-from threading import Lock
-
 from factory.abstract.pasta.bolognese import Bolognese
 from factory.abstract.pasta.pasta import Pasta
 from factory.abstract.pasta.pasta_abstract_factory import PastaFactory
