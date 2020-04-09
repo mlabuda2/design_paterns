@@ -14,15 +14,11 @@ class SingletonMeta(type):
 
     def __call__(cls, *args, **kwargs):
         # DCL
-        # if not cls._instance:
-        with cls._lock:
-            if not cls._instance:
-                cls._instance = super().__call__(*args, **kwargs)
+        if not cls._instance:
+            with cls._lock:
+                if not cls._instance:
+                    cls._instance = super().__call__(*args, **kwargs)
         return cls._instance
-
-
-class A(metaclass=SingletonMeta):
-    pass
 
 
 class Singleton(metaclass=SingletonMeta):
@@ -62,6 +58,10 @@ def test_singleton():
         process2.start()
         # process1.join()
         # process2.join()
+
+
+class A(metaclass=SingletonMeta):
+    pass
 
 
 if __name__ == "__main__":
