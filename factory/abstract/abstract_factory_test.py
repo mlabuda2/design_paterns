@@ -19,6 +19,7 @@ def test_factory_with_reflection():
     pepperoni = pepperoni_factory.cook_double_dough(33, 'tomato')
     pepperoni.eat()
 
+
 def test_factory():
     bolognese_factory = BologneseFactory()
     bolognese = bolognese_factory.cook(111, True)
@@ -34,8 +35,11 @@ def test_factory():
 
 
 if __name__ == '__main__':
-    # for _ in range(100000):
-    #     test_factory_with_reflection()
-
-    for _ in range(100000):
-        test_factory()
+    # test_factory()
+    test = 'no_reflection'
+    if test == 'reflection':
+        for _ in range(100000):
+            test_factory_with_reflection()
+    else:
+        for _ in range(100000):
+            test_factory()
