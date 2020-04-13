@@ -1,5 +1,6 @@
 import copy
 from abc import ABC, abstractmethod
+from __future__ import annotations
 
 
 class VolumePrototype(ABC):
@@ -29,7 +30,7 @@ class Volume(VolumePrototype):
     def data(self, data):
         self._data = data
 
-    def copy(self) -> object:
+    def copy(self) -> Volume:
         return copy.copy(self)
 
     def present(self) -> None:
