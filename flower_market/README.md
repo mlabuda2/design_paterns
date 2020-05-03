@@ -1,4 +1,4 @@
-##Projekt z wykorzystaniem wielu wzorców  
+## Projekt z wykorzystaniem wielu wzorców  
  Wykorzystane wzorce:
  * Fabryka abstrakcyjna
  * Prototyp
