@@ -4,23 +4,29 @@ from prototype.volume_prototype.volume_manager import VolumeManager
 
 def main():
     manager = VolumeManager()
-    manager.add(1, Volume(1, 'ssd', {'owner': 'John'}))
-    manager.add(2, Volume(2, 'hdd', {'owner': 'James'}))
-    manager.add(3, Volume(3, 'hybrid', {'owner': 'Martin'}))
+    volume1 = Volume(1, 'ssd', {'owner': 'John'})
+    volume2 = Volume(2, 'hdd', {'owner': 'James'})
+    volume3 = Volume(3, 'hybrid', {'owner': 'Martin'})
+    manager.add(1, volume1)
+    manager.add(2, volume2)
+    manager.add(3, volume3)
 
-    # 1 == 4
-    manager.add(4, manager.get_by_ident(1))
-    # change 4 property
-    manager.get_by_ident(4).volume_type = 'hdd'
+    manager.add(4, manager.get_by_idx(1))
 
-    manager.get_by_ident(1).present()
-    manager.get_by_ident(4).present()
+    volume4 = manager.get_by_idx(4)
+    volume4.volume_type = 'hdd'
 
-    manager.add(5, manager.get_by_ident(1).copy())
-    manager.get_by_ident(5).volume_type = 'ssd+hdd'
+    manager.get_by_idx(1).present()
+    manager.get_by_idx(4).present()
 
-    manager.get_by_ident(1).present()
-    manager.get_by_ident(5).present()
+    manager.add(5, manager.get_by_idx(1).copy())
+    volume5 = manager.get_by_idx(5)
+
+    volume5.volume_type = 'ssd+hdd'
+    volume5.update_data('owner', 'Test2')
+
+    manager.get_by_idx(1).present()
+    manager.get_by_idx(5).present()
 
 
 if __name__ == '__main__':

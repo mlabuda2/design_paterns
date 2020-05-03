@@ -30,6 +30,9 @@ class Volume(VolumePrototype):
     def data(self, data):
         self._data = data
 
+    def update_data(self, key, value):
+        self._data[key] = value
+
     def copy(self) -> Volume:
         return copy.copy(self)
 
