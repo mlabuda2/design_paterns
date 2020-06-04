@@ -5,7 +5,4 @@
  * Singleton
  * Fasada
  * Builder
- 
- Być może będą:
-  * Kompozyt
-  * \+ jakiś behawioralny
+ * Observer

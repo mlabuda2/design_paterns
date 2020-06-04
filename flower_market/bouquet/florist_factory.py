@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
 
-class ValentinesFloristFactory(ABC):
+class FloristFactory(ABC):
     @abstractmethod
     def prepare_bouquet(self): pass
