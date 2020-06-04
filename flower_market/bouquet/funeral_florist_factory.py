@@ -4,5 +4,5 @@ from flower_market.flower.rose.red_rose_factory import RedRoseFactory
 
 
 class FuneralFloristFactory(FloristFactory):
-    def prepare_bouquet(self):
+    def prepare_bouquet(self) -> Bouquet:
         return Bouquet([RedRoseFactory().prepare(20)])

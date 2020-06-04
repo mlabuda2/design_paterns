@@ -5,7 +5,7 @@ from flower_market.flower.flower import Flower
 
 class Peony(Flower, ABC):
     @property
-    def name(self):
+    def name(self) -> str:
         return 'Peony'
 
     @property

@@ -7,6 +7,12 @@ class Bouquet:
     def __init__(self, flowers) -> None:
         self.flowers = flowers
 
+    def __repr__(self):
+        flower_names = []
+        for flower in self.flowers:
+            flower_names.append(f"{flower.name} x{flower.count}")
+        return f"{self.__class__.__name__} <{','.join(flower_names)}>"
+
     def add(self, flower) -> None:
         self.flowers.append(flower)
 
@@ -17,5 +23,5 @@ class Bouquet:
         sum = sum * 1.2
         return sum
 
-    def copy(self):
+    def copy(self) -> object:
         return copy.deepcopy(self)

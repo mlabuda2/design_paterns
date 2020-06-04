@@ -24,13 +24,13 @@ class Broker(Subject):
         self._observers.remove(observer)
 
     def notify(self) -> None:
-        print("Broker: Notifying observers...")
+        print(f"Broker: Notifying observers... {self._observers}")
         for observer in self._observers:
             observer.update(self)
 
     def its_time_to_fetch_prices(self) -> None:
         print("\nBroker: I'm doing something important.")
-        self._coefficient = float(f"1.0{randrange(1, 5)}")
+        self._coefficient = float(f"1.{randrange(0, 50)}")
 
         print(f"Broker: My coefficient has just changed to: {self._coefficient}")
         self.notify()

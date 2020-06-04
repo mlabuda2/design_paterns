@@ -5,7 +5,7 @@ from flower_market.price_list.german_price_builder import GermanPriceBuilder
 
 class WhiteLilac(Lilac):
     @property
-    def color(self):
+    def color(self) -> str:
         return 'White'
 
     @property

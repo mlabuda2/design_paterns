@@ -10,17 +10,17 @@ class Price:
         self._tare = 0
 
     @property
-    def __repr__(self):
+    def __repr__(self) -> float:
         return self._gross
 
     @property
-    def gross(self):
+    def gross(self) -> float:
         return self._gross
 
     @property
-    def net(self):
+    def net(self) -> float:
         return self._net
 
     @property
-    def tare(self):
+    def tare(self) -> float:
         return self._tare

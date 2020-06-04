@@ -6,7 +6,7 @@ from flower_market.flower.rose.red_rose_factory import RedRoseFactory
 
 
 class ValentinesFloristFactory(FloristFactory):
-    def prepare_bouquet(self):
+    def prepare_bouquet(self) -> Bouquet:
         return Bouquet([RedRoseFactory().prepare(2),
                         WhiteLilacFactory().prepare(2),
                         PinkPeonyFactory().prepare(2)])

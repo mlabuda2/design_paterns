@@ -5,5 +5,5 @@ from flower_market.singleton_meta import SingletonMeta
 
 class WhiteLilacFactory(FlowerFactory, metaclass=SingletonMeta):
 
-    def prepare(self, count: int = 1, artificial: bool = False, cutted: bool = False):
+    def prepare(self, count: int = 1, artificial: bool = False, cutted: bool = False) -> WhiteLilac:
         return WhiteLilac(count, artificial, cutted)
