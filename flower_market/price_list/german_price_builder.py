@@ -4,7 +4,7 @@ from flower_market.price_list.price_builder import PriceBuilder
 class GermanPriceBuilder(PriceBuilder):
 
     @property
-    def tax(self) -> int:
+    def tax(self) -> float:
         return 1.19
 
     def add_export_cost(self):

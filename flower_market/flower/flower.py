@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
 
 from flower_market.price_list.price_list import PriceList
+from flower_market.product import Product
 
 
-class Flower(ABC):
+class Flower(Product, ABC):
     def __init__(self, count: int = 1, artificial: bool = False, cutted: bool = False) -> None:
         self.count = count
         self.artificial = artificial
@@ -22,10 +23,10 @@ class Flower(ABC):
     def margin(self) -> float:
         pass
 
-    def get_cost(self, PriceBuilder) -> float:  # Facade
+    def get_cost(self, PriceBuilder) -> float:
         price = PriceList().get_price(self, PriceBuilder)
         return price.gross * self.count
 
-    def get_cost_for_wholesale(self, PriceBuilder) -> float:  # Facade
+    def get_cost_for_wholesale(self, PriceBuilder) -> float:
         price = PriceList().get_price(self, PriceBuilder)
         return price.net * self.count

@@ -23,6 +23,7 @@ class ShoppingCart:
             return True
         return False
 
+    # Facade
     def count(self) -> float:
         sum = 0
         for product in self.products:
