@@ -1,6 +1,0 @@
-2020-03-07 18:29:58,171 	 [INFO | logger_singleton.py:66] > Hello, Logger
-2020-03-07 18:29:58,172 	 [DEBUG | logger_singleton.py:67] > bug occured
-2020-03-07 22:48:55,868 	 [INFO | logger_singleton.py:67] > Hello, Logger
-2020-03-07 22:48:55,870 	 [DEBUG | logger_singleton.py:68] > bug occurred
-2020-03-07 22:49:04,059 	 [INFO | logger_singleton.py:67] > Hello, Logger
-2020-03-07 22:49:04,059 	 [DEBUG | logger_singleton.py:68] > bug occurred
